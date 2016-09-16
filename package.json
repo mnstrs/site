@@ -1,0 +1,23 @@
+{
+  "name": "mnstrs",
+  "version": "1.0.0",
+  "description": "Site for MNSTRS ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnstrs/site.git"
+  },
+  "author": "MNTRS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnstrs/site/issues"
+  },
+  "homepage": "https://github.com/mnstrs/site",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

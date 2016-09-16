@@ -1,0 +1,12 @@
+
+.section{
+	min-height: 100vh;
+	background: $CL;
+	color: $BG;
+
+	&.dark{
+		background: $BG;
+		color: $CL;
+	}
+}
+
