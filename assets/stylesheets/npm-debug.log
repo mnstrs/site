@@ -1,0 +1,131 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'i',
+1 verbose cli   '-D',
+1 verbose cli   'gobble-sass' ]
+2 info using npm@2.14.12
+3 info using node@v4.2.6
+4 verbose install initial load of /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/package.json
+5 verbose installManyTop reading scoped package data from /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass/package.json
+6 verbose readDependencies loading dependencies from /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/package.json
+7 verbose install gobble-sass is installed as 0.5.0
+8 silly cache add args [ 'gobble-sass', null ]
+9 verbose cache add spec gobble-sass
+10 silly cache add parsed spec Result {
+10 silly cache add   raw: 'gobble-sass',
+10 silly cache add   scope: null,
+10 silly cache add   name: 'gobble-sass',
+10 silly cache add   rawSpec: '',
+10 silly cache add   spec: 'latest',
+10 silly cache add   type: 'tag' }
+11 silly addNamed gobble-sass@latest
+12 verbose addNamed "latest" is being treated as a dist-tag for gobble-sass
+13 info addNameTag [ 'gobble-sass', 'latest' ]
+14 silly mapToRegistry name gobble-sass
+15 silly mapToRegistry using default registry
+16 silly mapToRegistry registry https://registry.npmjs.org/
+17 silly mapToRegistry uri https://registry.npmjs.org/gobble-sass
+18 verbose addNameTag registry:https://registry.npmjs.org/gobble-sass not in flight; fetching
+19 verbose request uri https://registry.npmjs.org/gobble-sass
+20 verbose request no auth needed
+21 info attempt registry request try #1 at 15:19:33
+22 verbose request id 55bad8478dcf7a10
+23 verbose etag "6J0TCY0R80V217ESW3G5CJRYH"
+24 http request GET https://registry.npmjs.org/gobble-sass
+25 http 304 https://registry.npmjs.org/gobble-sass
+26 verbose headers { date: 'Wed, 27 Jan 2016 17:19:34 GMT',
+26 verbose headers   via: '1.1 varnish',
+26 verbose headers   'cache-control': 'max-age=300',
+26 verbose headers   etag: '"6J0TCY0R80V217ESW3G5CJRYH"',
+26 verbose headers   age: '82',
+26 verbose headers   connection: 'keep-alive',
+26 verbose headers   'x-served-by': 'cache-iad2126-IAD',
+26 verbose headers   'x-cache': 'HIT',
+26 verbose headers   'x-cache-hits': '1',
+26 verbose headers   'x-timer': 'S1453915174.045089,VS0,VE0',
+26 verbose headers   vary: 'Accept' }
+27 silly get cb [ 304,
+27 silly get   { date: 'Wed, 27 Jan 2016 17:19:34 GMT',
+27 silly get     via: '1.1 varnish',
+27 silly get     'cache-control': 'max-age=300',
+27 silly get     etag: '"6J0TCY0R80V217ESW3G5CJRYH"',
+27 silly get     age: '82',
+27 silly get     connection: 'keep-alive',
+27 silly get     'x-served-by': 'cache-iad2126-IAD',
+27 silly get     'x-cache': 'HIT',
+27 silly get     'x-cache-hits': '1',
+27 silly get     'x-timer': 'S1453915174.045089,VS0,VE0',
+27 silly get     vary: 'Accept' } ]
+28 verbose etag https://registry.npmjs.org/gobble-sass from cache
+29 verbose get saving gobble-sass to /Users/fuerzastudio5/.npm/registry.npmjs.org/gobble-sass/.cache.json
+30 silly addNameTag next cb for gobble-sass with tag latest
+31 silly addNamed gobble-sass@0.5.0
+32 verbose addNamed "0.5.0" is a plain semver version for gobble-sass
+33 silly cache afterAdd gobble-sass@0.5.0
+34 verbose afterAdd /Users/fuerzastudio5/.npm/gobble-sass/0.5.0/package/package.json not in flight; writing
+35 verbose afterAdd /Users/fuerzastudio5/.npm/gobble-sass/0.5.0/package/package.json written
+36 silly install resolved [ { name: 'gobble-sass',
+36 silly install resolved     version: '0.5.0',
+36 silly install resolved     description: 'Compile SASS files with gobble',
+36 silly install resolved     author: { name: 'Rich Harris' },
+36 silly install resolved     license: 'MIT',
+36 silly install resolved     repository:
+36 silly install resolved      { type: 'git',
+36 silly install resolved        url: 'git+https://github.com/gobblejs/gobble-sass.git' },
+36 silly install resolved     dependencies: { 'node-sass': '^3.0.0', sander: '^0.3.3' },
+36 silly install resolved     keywords: [ 'gobble', 'gobble-plugin' ],
+36 silly install resolved     files: [ 'index.js', 'README.md' ],
+36 silly install resolved     devDependencies: { mocha: '^2.2.4' },
+36 silly install resolved     scripts: { test: 'mocha', prepublish: 'npm test' },
+36 silly install resolved     gitHead: 'f56ab1e9685a14ee3256c96a1bb64a82aa9e730c',
+36 silly install resolved     bugs: { url: 'https://github.com/gobblejs/gobble-sass/issues' },
+36 silly install resolved     homepage: 'https://github.com/gobblejs/gobble-sass',
+36 silly install resolved     _id: 'gobble-sass@0.5.0',
+36 silly install resolved     _shasum: 'b692129b6f87a1b72ac65f12332f52b0febfd09c',
+36 silly install resolved     _from: 'gobble-sass@latest',
+36 silly install resolved     _npmVersion: '2.5.1',
+36 silly install resolved     _nodeVersion: '1.2.0',
+36 silly install resolved     _npmUser: { name: 'rich_harris', email: 'richard.a.harris@gmail.com' },
+36 silly install resolved     maintainers: [ [Object] ],
+36 silly install resolved     dist:
+36 silly install resolved      { shasum: 'b692129b6f87a1b72ac65f12332f52b0febfd09c',
+36 silly install resolved        tarball: 'http://registry.npmjs.org/gobble-sass/-/gobble-sass-0.5.0.tgz' },
+36 silly install resolved     directories: {},
+36 silly install resolved     _resolved: 'https://registry.npmjs.org/gobble-sass/-/gobble-sass-0.5.0.tgz',
+36 silly install resolved     readme: 'ERROR: No README data found!' } ]
+37 info install gobble-sass@0.5.0 into /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets
+38 info installOne gobble-sass@0.5.0
+39 verbose installOne of gobble-sass to /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets not in flight; installing
+40 verbose lock using /Users/fuerzastudio5/.npm/_locks/gobble-sass-b2eb039da2f2612b.lock for /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass
+41 silly install write writing gobble-sass 0.5.0 to /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass
+42 verbose unbuild node_modules/gobble-sass
+43 info preuninstall gobble-sass@0.5.0
+44 info uninstall gobble-sass@0.5.0
+45 verbose unbuild rmStuff gobble-sass@0.5.0 from /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules
+46 info postuninstall gobble-sass@0.5.0
+47 silly gentlyRm /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass is being purged from base /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets
+48 verbose gentlyRm don't care about contents; nuking /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass
+49 silly vacuum-fs purging /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass
+50 verbose unlock done using /Users/fuerzastudio5/.npm/_locks/gobble-sass-b2eb039da2f2612b.lock for /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass
+51 verbose stack Error: ENOTEMPTY: directory not empty, rmdir '/Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass/node_modules/node-sass/node_modules/node-gyp/node_modules'
+51 verbose stack     at Error (native)
+52 verbose cwd /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets
+53 error Darwin 14.5.0
+54 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "i" "-D" "gobble-sass"
+55 error node v4.2.6
+56 error npm  v2.14.12
+57 error path /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass/node_modules/node-sass/node_modules/node-gyp/node_modules
+58 error code ENOTEMPTY
+59 error errno -66
+60 error syscall rmdir
+61 error ENOTEMPTY: directory not empty, rmdir '/Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass/node_modules/node-sass/node_modules/node-gyp/node_modules'
+62 error If you need help, you may report this error at:
+62 error     <https://github.com/npm/npm/issues>
+63 verbose exit [ -66, true ]
+64 verbose unbuild node_modules/gobble-sass
+65 silly gentlyRm /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass is being purged from base /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets
+66 verbose gentlyRm don't care about contents; nuking /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass
+67 silly vacuum-fs purging /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules/gobble-sass
+68 silly vacuum-fs removing /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets/node_modules
+69 silly vacuum-fs finished vacuuming up to /Applications/XAMPP/xamppfiles/htdocs/trabalho/alternative/assets/stylesheets
