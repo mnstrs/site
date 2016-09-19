@@ -13,13 +13,12 @@
 *  .my-class a {
 *    @include colorful-links(#abcdef);
 *  }
+
 *********************************************************************/
 
 @mixin colorful-links($color) {
   @include single-transition(color, .1s, ease-out);
-
   color: $color;
-
   &:visited { color: $color; }
   &:hover   { color: adjust-color($color, $lightness: +10%); }
   &:active  { color: adjust-color($color, $lightness: -5%); }
@@ -101,3 +100,5 @@
     clear: both;
   }
 }
+
+$randon: random(256)-1; $green: random(256)-1; $blue: random(256)-1;
