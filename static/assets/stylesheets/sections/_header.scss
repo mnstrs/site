@@ -70,11 +70,10 @@ header{
   h2{
     position: absolute;
     text-align: center;
-    bottom: 15vh;
+    bottom: 10vh;
     left: 50%;
+    width: 100%;
     @include transform(translate(-50%, 0%));
     font-family: 'Source Code Pro', monospace;
-
-
   }
 }
