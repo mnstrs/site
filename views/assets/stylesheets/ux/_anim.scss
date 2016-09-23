@@ -1,0 +1,66 @@
+@keyframes noisew{
+  $steps:8;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(720)+px,9999px,random(500)+px,0);
+    }
+  }
+}
+
+@keyframes noise-anim-2{
+  $steps:3;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(170)+px,9999px,random(270)+px,0);
+    }
+  }
+}
+
+@keyframes noise-anim-3{
+  $steps:2;
+
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(1)+px,9px,random(7)+px,0);
+    }
+  }
+
+}
+
+@keyframes noise-anim{
+  $steps:8;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(125)+px,9999px,random(200)+px,0);
+    }
+  }
+}
+
+
+@keyframes glitch-effect{
+    $steps: 8;
+    $range: 12;
+    @for $i from 0 through $steps{
+        #{percentage($i*(1/$steps))}{
+          @include transform(skew(random($range) - $range + deg));
+        }
+    }
+}
+
+
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}

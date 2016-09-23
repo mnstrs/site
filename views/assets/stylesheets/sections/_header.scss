@@ -1,0 +1,87 @@
+.logo{
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%,-50%));
+
+  use{
+    fill: $CL;
+  }
+
+  &.red{
+    z-index: 2;
+    @include transform(translate(-50.5%,-50.7%));
+    clip:rect(0,900px,0,0);
+    animation:noise-anim-2 5s infinite  cubic-bezier(.25, 1.94, .02, 1.34) alternate-reverse;
+
+    use{
+      fill: #BF0023;
+    }
+
+  }
+
+  &.blue{
+    z-index: 1;
+    @include transform(translate(-49.5%,-49.2%));
+    clip:rect(0,999px,0,0);
+    animation:noise-anim 4s infinite cubic-bezier(.25, 1.46, .02, 1.34) alternate-reverse;
+
+    use{
+      fill: #03FC00;
+    }
+
+  }
+}
+
+.logo-wrp{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  animation: glitch-effect 6s infinite step-end;
+
+}
+header{
+  position: relative;
+
+  &:before, &:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    opacity: .1;
+    background-color: $BG;
+    background-image: url(/assets/images/noise.gif);
+    background-blend-mode: multiply;
+  }
+
+  &:after{
+    background-color: #BF0023;
+    clip: rect(60px, 9999px, 60px, 0);
+    animation: noisew 3s infinite step-end;
+  }
+
+  h2{
+    position: absolute;
+    text-align: center;
+    bottom: 10vh;
+    left: 50%;
+    width: 100%;
+    @include transform(translate(-50%, 0%));
+    font-family: 'Source Code Pro', monospace;
+  }
+
+  .typed-cursor{
+      opacity: 1;
+      -webkit-animation: blink 0.5s infinite;
+      -moz-animation: blink 0.5s infinite;
+      animation: blink 0.5s infinite;
+  }
+
+}
