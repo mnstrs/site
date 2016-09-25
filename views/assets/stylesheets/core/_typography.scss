@@ -14,7 +14,7 @@
 
 
 body {
-    font: normal normal normal #{percentage($PROJECT_FONT_SIZE/16px)}/#{($PROJECT_BASELINE/$PROJECT_FONT_SIZE)} 'Poppins', sans-serif;
+    font: normal normal normal #{percentage($PROJECT_FONT_SIZE/16px)}/#{($PROJECT_BASELINE/$PROJECT_FONT_SIZE)} 'Source Code Pro', sans-serif;
     @include font-smoothing(antialiased);
 }
 blockquote, q { quotes: none; }
@@ -70,4 +70,10 @@ h4 {
   line-height: em(26px);
   margin-bottom: em(26px);
   font-weight: normal;
+}
+
+
+
+h1, h2, h3, h4, h5, h6{
+   font-family: 'Poppins', sans-serif;
 }
