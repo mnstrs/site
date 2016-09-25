@@ -17,7 +17,7 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
-} 
+}
 
 
 /*********************************************************************
@@ -25,8 +25,7 @@ html {
 *********************************************************************/
 
 a {
-    @include colorful-links($CL);
-
+    @include colorful-links($BG);
     text-decoration: none;
     &:focus {
         outline: none;

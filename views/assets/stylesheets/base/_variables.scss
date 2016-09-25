@@ -5,11 +5,14 @@
 $PROJECT_FONT_SIZE : 16px;
 $PROJECT_BASELINE : 24px;
 $GRID_COLUMN_WIDTH : 60px;
-$GRID_GUTTER : 20px;
+$GRID_GUTTER : 10px;
 $GRID_WIDTH : (14*$GRID_COLUMN_WIDTH) + (13*$GRID_GUTTER);
 
 /*********************************************************************
-*  =Colors
+*  = Colors
 *********************************************************************/
+
 $BG : #112030;
 $CL : #EBF3FF;
+$TR : #FE0E36;
+$lightness :  $BG;

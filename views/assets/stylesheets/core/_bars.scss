@@ -21,13 +21,16 @@ $steps:20;
       z-index: 1;
       opacity: 0.5;
     }
+
     &:after{
       background: rgba(252, 0, 0, (random(100)/100));
       animation: noise 3s infinite linear alternate-reverse;
     }
+
     &:before{
       background: rgba(0, 252, 0, (random(100)/100));
     }
+
   }
 
   @for $i from 0 through $steps{
@@ -36,24 +39,23 @@ $steps:20;
     .b#{$i}{
       left:unquote( (random(99) + 1) + '% ');
       top:unquote( (random(99) +1) + '% ');
-      height: (random(1) + 1) + px;
-      width: (random(10) + 2) + px;
+      height: (random(4) + 1) + px;
+      width: (random(20) + 2) + px;
 
       &:before{
-        height:unquote( (random(99) + 10) + '% ');
-        width:unquote( (random(99) + 10) + '% ');
+        height:unquote( (random(189) + 10) + '% ');
+        width:unquote( (random(129) + 10) + '% ');
         left:(random(1) + 1) + px;
         top:(random(1) + 1) + px;
       }
 
       &:after{
-        height:unquote( (random(99) + 10) + '% ');
-        width:unquote( (random(99) + 10) + '% ');
+        height:unquote( (random(130) + 10) + '% ');
+        width:unquote( (random(120) + 10) + '% ');
         left:(random(1) + 1) + px;
         top:(random(1) + 1) + px;
       }
 
     }
   }
-
 }

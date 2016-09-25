@@ -14,10 +14,9 @@
 
 
 body {
-    font: normal normal normal #{percentage($PROJECT_FONT_SIZE/16px)}/#{($PROJECT_BASELINE/$PROJECT_FONT_SIZE)} Allright-light, sans-serif;
+    font: normal normal normal #{percentage($PROJECT_FONT_SIZE/16px)}/#{($PROJECT_BASELINE/$PROJECT_FONT_SIZE)} 'Poppins', sans-serif;
     @include font-smoothing(antialiased);
 }
-
 blockquote, q { quotes: none; }
 
 blockquote:before, blockquote:after,
@@ -72,4 +71,3 @@ h4 {
   margin-bottom: em(26px);
   font-weight: normal;
 }
-

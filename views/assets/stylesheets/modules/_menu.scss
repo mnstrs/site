@@ -1,18 +1,52 @@
 nav{
   position: absolute;
-  top: 10px;
+  top: 2.5vh;
   left: 50%;
   @include transform(translate( -50%, 0%));
+  width: 100%;
+  text-align: center;
+
+  .logo-link{
+    position: absolute;
+    top: 0;
+    left: -20px;
+
+    svg{
+      width: 90px;
+      height: auto;
+    }
+    use{
+      fill: $BG;
+    }
+  }
 
   a{
+    position: relative;
+    top: 1vh;
     margin: 0 1em;
     display: inline-block;
     color: $BG;
     font-size: em(18px);
     font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+
+    &:before{
+      position: absolute;
+      left: -5%;
+      top: 50%;
+      margin-top: -2px;
+      height: 4px;
+      width: 110%;
+      content:"";
+    }
 
     &.on{
       font-weight: 600;
+
+      &:before{
+        background-color: $TR;
+      }
+
     }
   }
 }

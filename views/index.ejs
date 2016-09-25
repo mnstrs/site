@@ -13,6 +13,33 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <style>
+      header{
+        overflow: hidden;
+      }
+
+      header .logo{
+        position: absolute;
+        z-index: 3;
+        left: 50%;
+        top: 50%;
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+
+      header{
+        min-height: 100vh;
+      }
+
+      .dark{
+        background: #112030;
+        color: #EBF3FF;
+      }
+
+    </style>
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600|Source+Code+Pro:300,700" rel="stylesheet">
     <link href="public/style.css" rel="stylesheet">
 
@@ -36,47 +63,95 @@
             %>
               <i class="bar b<%= x %>"></i>
             <% } %>
-
-
           </div>
 
           <div class="logo-wrp">
+
             <svg class="logo" width="250" height="174" viewBox="0 0 250 174">
                 <use xlink:href="#logo"/>
                 <use xlink:href="#lettering"/>
             </svg>
+
             <svg class="logo red" width="250" height="174" viewBox="0 0 250 174">
                 <use xlink:href="#logo"/>
                 <use xlink:href="#lettering"/>
             </svg>
+
             <svg class="logo blue" width="250" height="174" viewBox="0 0 250 174">
                 <use xlink:href="#logo"/>
                 <use xlink:href="#lettering"/>
             </svg>
+
           </div>
 
           <h2>
-            We
-            <strong id="typed">code</strong>
-            <span class="typed-cursor">_</span>
+            We <strong id="typed">code</strong><span class="typed-cursor">_</span>
           </h2>
 
         </header>
 
         <main role="home">
+            <nav id="menu">
+              <a href="#" class="logo-link">
+                <svg width="250" height="114" viewBox="0 0 250 114">
+                    <use xlink:href="#logo"/>
+                </svg>
+              </a>
 
-            <nav>
               <a href="#portfolio" class="portfolio on">portfólio</a>
               <a href="#sobre" class="sobre">sobre</a>
               <a href="#contato" class="contato">contato</a>
             </nav>
 
+            <section id="portfolio" class="section">
 
+              <div class="thumbs">
+                <div class="thumb portfolio-type-title">
+                    <span><small>ux</small> design</span>
+                </div>
+                <div class="thumb">
+                  <a href="#">
+                    <img src="https://d13yacurqjgara.cloudfront.net/users/228368/screenshots/1850768/dashboard.gif">
+                  </a>
+                </div>
+                <div class="thumb">
+                  <a href="#">
+                    <img src="https://d13yacurqjgara.cloudfront.net/users/188162/screenshots/1717585/material_design_animation.gif">
+                  </a>
+                </div>
+                <div class="thumb">
+                  <a href="#">
+                    <img src="https://d13yacurqjgara.cloudfront.net/users/107759/screenshots/1310581/promosite-html5.gif">
+                  </a>
+                </div>
+              </div>
 
-            <section id="porfolio" class="section">
+              <div class="thumbs">
+                <div class="thumb">
+                  <a href="#">
+                    <img src="https://d13yacurqjgara.cloudfront.net/users/16711/screenshots/2578590/new_look.gif">
+                  </a>
+                </div>
+                <div class="thumb">
+                  <a href="#">
+                    <img src="https://d13yacurqjgara.cloudfront.net/users/124059/screenshots/1641098/logo-process2.gif">
+                  </a>
+                </div>
+                <div class="thumb">
+                  <a href="#">
+                    <img src="https://d13yacurqjgara.cloudfront.net/users/189524/screenshots/2264567/02-rocketgraph_logoanimation_dribble_v2.gif">
+                  </a>
+                </div>
+                <div class="thumb portfolio-type-title">
+                  <span>branding</span>
+                </div>
+              </div>
+
             </section>
 
             <section id="sobre" class="section dark">
+
+
             </section>
 
             <section id="contato" class="section">
@@ -88,5 +163,5 @@
         </footer>
 
     </body>
-    <script src="assets/javascripts/main.js"></script>
+    <script async src="assets/javascripts/main.js"></script>
 </html>
