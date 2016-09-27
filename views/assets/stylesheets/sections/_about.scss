@@ -54,7 +54,10 @@
   img{
     width: 100%;
     mix-blend-mode: multiply;
+<<<<<<< HEAD
     animation: noise-3 1s linear infinite;
+=======
+>>>>>>> c22b5c37e8073a9a4f82b8d581078cc686101b95
   }
 
   h3{
@@ -64,6 +67,7 @@
     left: ($grid-unit * 5);
     font-weight: 700;
   }
+<<<<<<< HEAD
 
   &:last-child{
     img{
@@ -71,4 +75,6 @@
 
     }
   }
+=======
+>>>>>>> c22b5c37e8073a9a4f82b8d581078cc686101b95
 }
