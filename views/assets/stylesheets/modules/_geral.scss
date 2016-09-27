@@ -1,0 +1,12 @@
+main{
+	position: relative;
+}
+.section{
+	background: $CL;
+	color: $BG;
+
+	&.dark{
+		background: $BG;
+		color: $CL;
+	}
+}

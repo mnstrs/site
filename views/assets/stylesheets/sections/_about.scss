@@ -1,0 +1,74 @@
+// .one img{
+//   mix-blend-mode: multiply;
+// }
+
+#sobre{
+  text-align: center;
+  overflow: hidden;
+
+  .wrp{
+    width: 98vw;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  article{
+    position: relative;
+    z-index: 2;
+    margin: 15vh auto 8vh;
+    max-width: 640px;
+    font-size: em(15px);
+
+    h2{
+      font-weight: 700;
+    }
+  }
+
+}
+
+.ones{
+  position: relative;
+  margin-bottom: 5vh;
+  font-size: 0;
+
+  &:after{
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 100%;
+    left: 50.5%;
+    background: $TR;
+  }
+
+}
+
+.one{
+  position: relative;
+  width: 46%;
+  margin: 0 2%;
+  font-size: $PROJECT_FONT_SIZE;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+
+  img{
+    width: 100%;
+    mix-blend-mode: multiply;
+    animation: noise-3 1s linear infinite;
+  }
+
+  h3{
+    position: absolute;
+    margin: 0;
+    bottom: ($grid-unit * 5);
+    left: ($grid-unit * 5);
+    font-weight: 700;
+  }
+
+  &:last-child{
+    img{
+      animation: noise-3 5s cubic-bezier(.58,-0.21,.37,.94) infinite;
+
+    }
+  }
+}
