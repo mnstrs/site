@@ -8,14 +8,14 @@
 
   .wrp{
     width: 98vw;
-    max-width: 1024px;
+    max-width: 1900px;
     margin: 0 auto;
   }
 
   article{
     position: relative;
     z-index: 2;
-    margin: 15vh auto 8vh;
+    margin: 15vh auto 15vh;
     max-width: 640px;
     font-size: em(15px);
 
@@ -33,28 +33,32 @@
 
   &:after{
     position: absolute;
-    content: "";
-    width: 1px;
-    height: 100%;
     left: 50.5%;
+    top: -12vh;
+    width: 1px;
+    height: 10vh;
     background: $TR;
+    content: "";
   }
 
 }
 
 .one{
   position: relative;
-  width: 46%;
+  width: 24%;
   margin: 0 2%;
   font-size: $PROJECT_FONT_SIZE;
   display: inline-block;
   vertical-align: middle;
   text-align: left;
 
+  a{
+      color: inherit
+  }
+
   img{
     width: 100%;
     mix-blend-mode: multiply;
-    animation: noise-3 1s linear infinite;
   }
 
   h3{
@@ -65,11 +69,15 @@
     font-weight: 700;
   }
 
-
-  &:last-child{
+  &:hover {
     img{
-      animation: noise-3 5s cubic-bezier(.58,-0.21,.37,.94) infinite;
+      animation: noise-3 1s cubic-bezier(.58,-0.21,.37,.94) infinite;
+    }
+  }
 
+  &:last-child:hover{
+    img{
+      animation: noise-3 2s cubic-bezier(.58,-0.21,.37,.94) infinite;
     }
   }
 }
