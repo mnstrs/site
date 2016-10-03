@@ -1,0 +1,4 @@
+.label{
+  position: absolute;
+  @include transform(rotate(-90deg));
+}
