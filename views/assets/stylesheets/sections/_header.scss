@@ -37,9 +37,9 @@
   height: 100%;
   width: 100%;
   animation: noise-1 6s infinite step-end;
-
 }
-header{
+
+.header{
   position: relative;
 
   &:before, &:after{
@@ -50,7 +50,7 @@ header{
     z-index: 3;
     height: 100%;
     width: 100%;
-    opacity: .1;
+    opacity: .2;
     background-color: $BG;
     background-image: url(/assets/images/noise.gif);
     background-blend-mode: multiply;

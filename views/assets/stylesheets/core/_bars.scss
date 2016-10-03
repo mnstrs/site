@@ -13,21 +13,14 @@ $steps:20;
     position: fixed;
     display: block;
     background: #fff;
+    opacity: random(100) / 100;
 
-    &:before, &:after{
+    &:before{
       position: absolute;
       content: "";
       z-index: 1;
-      opacity: 0.5;
-    }
-
-    &:after{
-      background: rgba(252, 0, 0, (random(100)/100));
-      animation: noise 3s infinite linear alternate-reverse;
-    }
-
-    &:before{
-      background: rgba(0, 252, 0, (random(100)/100));
+      opacity: random(100) / 100;
+      background: rgba(252, 252, 252, (random(100)/100));
     }
 
   }
@@ -43,18 +36,10 @@ $steps:20;
 
       &:before{
         height:unquote( (random(189) + 10) + '% ');
-        width:unquote( (random(129) + 10) + '% ');
-        left:(random(1) + 1) + px;
+        width:unquote( (random(150) + 10) + '% ');
+        left:(random(3) + 1) + px;
         top:(random(1) + 1) + px;
         animation: noise-4 unquote( (random(12) + 10) + 's ')infinite step-end;
-      }
-
-      &:after{
-        height:unquote( (random(130) + 10) + '% ');
-        width:unquote( (random(120) + 10) + '% ');
-        left:(random(1) + 1) + px;
-        top:(random(1) + 1) + px;
-        animation: noise-4 unquote( (random(14) + 10) + 's ') infinite cubic-bezier(.25, 1.46, .02, 1.34) alternate-reverse;
       }
 
     }

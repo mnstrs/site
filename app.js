@@ -14,6 +14,10 @@ app.listen(3000, function(){
       res.render('index');
   });
 
+  app.get('/casa-decorativa', function (req, res) {
+    res.render('casa-decorativa');
+  });
+
   console.log('3000 is the magic port');
 
 });
