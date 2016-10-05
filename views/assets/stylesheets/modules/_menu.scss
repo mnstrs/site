@@ -49,4 +49,13 @@ nav{
 
     }
   }
+
+  &.fixed{
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    @include transform(translateZ(0));
+    will-change: transform;
+    @include transition(transform .5s);
+  }
 }
