@@ -4,6 +4,7 @@ main{
 .section{
 	background: $CL;
 	color: $BG;
+	will-change: transform;
 
 	&.dark{
 		background: $BG;
