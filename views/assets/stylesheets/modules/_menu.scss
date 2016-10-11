@@ -32,7 +32,6 @@ nav{
     top: 1vh;
     margin: 0 1em;
     display: inline-block;
-    color: $BG;
     font-size: em(18px);
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -54,6 +53,26 @@ nav{
         background-color: $TR;
       }
 
+    }
+  }
+
+  &[data-color='light']{
+    a{
+      color: $BG;
+    }
+    .logo-link use{
+        fill: $BG;
+    }
+
+  }
+
+  &[data-color='dark']{
+    a{
+      color: $WT;
+    }
+    
+    .logo-link use{
+        fill: $WT;
     }
   }
 

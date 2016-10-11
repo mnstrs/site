@@ -14,6 +14,7 @@
   ,goingback    = false
   ,wordsIndex   = 0
   ,typed        = document.querySelector('#typed')
+  ,home         = document.querySelector('#home')
 
   function mainloop(){
       // request animation frame
@@ -72,22 +73,21 @@
            section[i] = section[i] || { el: sections[i] }
            // Reinit
           // section[i].el.style.display = 'block'
-           section[i].height = section[i].el.offsetHeight
-           section[i].start = section[i-1] ? section[i-1].stop : 0
-           section[i].stop = section[i-1] ? section[i-1].stop + section[i].height : section[i].height
-           section[i].isScroll = section[i].el.className.indexOf('stick') < 0
+           section[i].height    = section[i].el.offsetHeight
+           section[i].start     = section[i-1] ? section[i-1].stop : wHeight
+           section[i].stop      = section[i-1] ? section[i-1].stop + section[i].height : section[i].height
+           section[i].isScroll  = section[i].el.className.indexOf('stick') < 0
+           section[i].dark      = section[i].el.className.indexOf('dark') > 0
 
            // If it's sticked but higher than the screen...
            if (section[i].height - wHeight > 0) section[i].gap = section[i].height - wHeight
 
            // Let's find a index
-           section[i].el.style.zIndex = !section[i].isScroll ? 10 - i : 100 - i
+           //section[i].el.style.zIndex = !section[i].isScroll ? 10 - i : 100 - i
        }
 
-       console.log(section[i-1].stop)
-       wrapper.style.height = section[i-1].stop + "px"
+       wrapper.style.height = section[i-1].stop - section[0].height  + "px"
 
-       return section
    }
    window.onresize = props
 
@@ -112,19 +112,31 @@
            // Is it visible right now?
 
            if (lastY >= section[i].start - wHeight && lastY <= section[i].stop){
-              // section[i].el.style.display = "block"
+
                if (
                    // Is it scrolling?
                    (section[i].isScroll) ||
                    // Or is it stick, but higher than window?
                    (!section[i].isScroll && section[i].gap && lastY >= section[i].start)
                )
-                    setTop(section[i], section[i].start - lastY)
-                    if(lastY >= section[1].start)
-                        menu.style.position = 'fixed'
-                    else
-                        menu.style.position = 'relative'
+               //setTop(section[i], section[i].start - lastY * .9)
+               section[i].el.classList.add('actual')
 
+
+              // to get menu fixed
+              if(lastY >= section[1].start)
+                  menu.classList.add('fixed')
+              else
+                  menu.classList.remove('fixed')
+
+            // if is dark
+              if(section[i].dark || lastY >= section[count - 1].start)
+                menu.setAttribute("data-color", "light");
+              else
+                menu.setAttribute("data-color", "dark");
+
+           }else{
+             section[i].el.classList.remove('actual')
            }
        }
        animation(loop)

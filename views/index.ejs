@@ -1,10 +1,9 @@
 <%- include header %>
+<%- include header-home %>
 
-  <main role="home" id="wrap">
-    <%- include header-home %>
-
-    <%- include menu %>
-      <section id="portfolio" class="section stick">
+    <main role="home" id="wrap">
+      <%- include menu %>
+      <section id="portfolio" class="section">
 
         <div class="thumbs">
           <div class="thumb portfolio-type-title">
@@ -81,7 +80,7 @@
 
       </section>
 
-      <section id="contato" class="section stick">
+      <section id="contato" class="section ">
         <div class="bars">
           <% for(var i = 0; i < 20; i++) {
             var x = Math.floor((Math.random() * 20) + 1);
