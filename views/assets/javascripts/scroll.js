@@ -7,7 +7,7 @@
                 || window.msRequestAnimationFrame
                 || window.oRequestAnimationFrame
                 || function(callback){ window.setTimeout(callback, 1000/60) }
-                
+
   // lettering effect.
   ,words        = ['code', 'design', 'create']
   ,index        = 0
@@ -43,6 +43,7 @@
   // check if has the typed effect
   if (typeof(typed) != 'undefined' && typed != null)
       mainloop()
+
 
   // Detect css transform
   var cssTransform = (function(){
@@ -123,18 +124,17 @@
                //setTop(section[i], section[i].start - lastY * .9)
                section[i].el.classList.add('actual')
 
+                // to get menu fixed
+                if(lastY >= section[1].start)
+                    menu.classList.add('fixed')
+                else
+                    menu.classList.remove('fixed')
 
-              // to get menu fixed
-              if(lastY >= section[1].start)
-                  menu.classList.add('fixed')
-              else
-                  menu.classList.remove('fixed')
-
-            // if is dark
-              if(section[i].dark || lastY >= section[count - 1].start)
-                menu.setAttribute("data-color", "light");
-              else
-                menu.setAttribute("data-color", "dark");
+              // if is dark
+                if(section[i].dark || lastY >= section[count - 1].start)
+                  menu.setAttribute("data-color", "light");
+                else
+                  menu.setAttribute("data-color", "dark");
 
            }else{
              section[i].el.classList.remove('actual')
@@ -147,4 +147,4 @@
    props()
    loop()
 
-})();
+ })();
