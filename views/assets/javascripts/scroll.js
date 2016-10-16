@@ -1,48 +1,5 @@
 (function(){
 
-  // requesting requestAnimationFrame // if browser not support get a setTimeout out
-  var animation =  window.requestAnimationFrame
-                || window.webkitRequestAnimationFrame
-                || window.mozRequestAnimationFrame
-                || window.msRequestAnimationFrame
-                || window.oRequestAnimationFrame
-                || function(callback){ window.setTimeout(callback, 1000/60) }
-  // lettering effect.
-  ,words        = ['code', 'design', 'create']
-  ,index        = 0
-  ,frame        = 0
-  ,goingback    = false
-  ,wordsIndex   = 0
-  ,typed        = document.querySelector('#typed')
-  ,home         = document.querySelector('#home')
-
-  function mainloop(){
-      // request animation frame
-      animation(mainloop)
-      frame++
-
-      var modulo = goingback ? 5 : 10
-
-      if (!(frame % modulo)) {
-          index += goingback ? -1 : 1
-
-          if (index <= words[wordsIndex].length)
-              typed.innerHTML = words[wordsIndex].substr(0, index)
-          else
-              goingback = true
-
-          if (index == 0) {
-              goingback = false
-              wordsIndex++
-              wordsIndex %= words.length
-          }
-      }
-  }
-
-  // check if has the typed effect
-  if (typeof(typed) != 'undefined' && typed != null)
-      mainloop()
-
   // Detect css transform
   var cssTransform = (function(){
       var prefixes = 'transform webkitTransform mozTransform oTransform msTransform'.split(' ')
@@ -122,18 +79,17 @@
                //setTop(section[i], section[i].start - lastY * .9)
                section[i].el.classList.add('actual')
 
+                // to get menu fixed
+                if(lastY >= section[1].start)
+                    menu.classList.add('fixed')
+                else
+                    menu.classList.remove('fixed')
 
-              // to get menu fixed
-              if(lastY >= section[1].start)
-                  menu.classList.add('fixed')
-              else
-                  menu.classList.remove('fixed')
-
-            // if is dark
-              if(section[i].dark || lastY >= section[count - 1].start)
-                menu.setAttribute("data-color", "light");
-              else
-                menu.setAttribute("data-color", "dark");
+              // if is dark
+                if(section[i].dark || lastY >= section[count - 1].start)
+                  menu.setAttribute("data-color", "light");
+                else
+                  menu.setAttribute("data-color", "dark");
 
            }else{
              section[i].el.classList.remove('actual')
@@ -146,4 +102,4 @@
    props()
    loop()
 
-})();
+ })();

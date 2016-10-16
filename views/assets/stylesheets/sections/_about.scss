@@ -52,11 +52,18 @@
     left: 50.5%;
     top: -12vh;
     width: 1px;
-    height: 10vh;
+    height: 0;
     background: $TR;
     content: "";
+    @include transition(all .5s linear);
   }
 
+
+
+}
+
+.actual{
+  .ones:after {height: 10vh;}
 }
 
 .one{
