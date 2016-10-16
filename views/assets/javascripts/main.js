@@ -7,6 +7,7 @@
                 || window.msRequestAnimationFrame
                 || window.oRequestAnimationFrame
                 || function(callback){ window.setTimeout(callback, 1000/60) }
+                
   // lettering effect.
   ,words        = ['code', 'design', 'create']
   ,index        = 0
