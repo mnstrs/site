@@ -1,19 +1,18 @@
 // lettering effect.
-
-var words       = ['code', 'design', 'create']
+let words       = ['code', 'design', 'create']
   ,index        = 0
   ,frame        = 0
   ,goingback    = false
   ,wordsIndex   = 0
-  ,typed        = document.querySelector('#typed')
-  ,home         = document.querySelector('#home')
+  ,typed        = doc.querySelector('#typed')
+  ,home         = doc.querySelector('#home')
 
 function mainloop(){
     // request animation frame
     animation(mainloop)
     frame++
 
-    var modulo = goingback ? 5 : 10
+    let modulo = goingback ? 5 : 10
 
     if (!(frame % modulo)) {
         index += goingback ? -1 : 1

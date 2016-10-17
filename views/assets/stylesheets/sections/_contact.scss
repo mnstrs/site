@@ -34,6 +34,15 @@
       position: relative;
       margin-bottom: $grid-unit * 3;
 
+      &.focus{
+          label{
+            font-size: em(12px);
+            @include transform (translate(-100%, -30%));
+
+          }
+
+      }
+
       &.messenger{
         label{
           position: relative;
@@ -50,6 +59,7 @@
       font-size: em(18px);
       font-weight: bold;
       @include transform (translate(0, -50%));
+      @include transition(all .2s linear);
     }
 
     input{
