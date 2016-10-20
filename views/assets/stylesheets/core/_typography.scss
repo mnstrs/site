@@ -11,8 +11,6 @@
 
 // @include font-face('Allright-light', 'AlrightSans-Light_gdi', 'allright','normal', 300);
 
-
-
 body {
     font: normal normal normal #{percentage($PROJECT_FONT_SIZE/16px)}/#{($PROJECT_BASELINE/$PROJECT_FONT_SIZE)} 'Source Code Pro', sans-serif;
     @include font-smoothing(antialiased);

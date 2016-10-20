@@ -13,6 +13,7 @@ let cssTransform = (function() {
 let sections = doc.querySelectorAll('.section'),
     wrapper = doc.querySelector('#wrap'),
     menu = doc.querySelector('#menu'),
+    anchors = doc.querySelectorAll('#menu a'),
     count = sections.length,
     section = [],
     wHeight = window.innerHeight
@@ -30,7 +31,7 @@ function props() {
             // Reinit
             // section[i].el.style.display = 'block'
         section[i].height = section[i].el.offsetHeight
-        section[i].start = section[i - 1] ? section[i - 1].stop : wHeight
+        section[i].start = section[i - 1] ? section[i - 1].stop : 0
         section[i].stop = section[i - 1] ? section[i - 1].stop + section[i].height : section[i].height
         section[i].isScroll = section[i].el.className.indexOf('stick') < 0
         section[i].dark = section[i].el.className.indexOf('dark') > 0
@@ -50,9 +51,9 @@ window.onresize = props
 
 function setTop(m, t) {
     if (cssTransform)
-        m.el.style[cssTransform] = "translate3d(0, " + t + "px,0)"
+        m.style[cssTransform] = "translate3d(0, -" + t + "px,0)"
     else
-        m.el.style["top"] = t
+        m.style["top"] = t
 }
 
 function loop() {
@@ -66,17 +67,16 @@ function loop() {
 
     let i = 0
     for (i = 0; i < count; i++) {
-        // Is it visible right now?
 
-        if (lastY >= section[i].start - wHeight && lastY <= section[i].stop) {
+        // if it is on screen
+        if (lastY >= (section[i].start - 2) && lastY <= (section[i].stop + 2) ){
 
-            if (
-                // Is it scrolling?
-                (section[i].isScroll) ||
-                // Or is it stick, but higher than window?
-                (!section[i].isScroll && section[i].gap && lastY >= section[i].start)
-            )
-            //setTop(section[i], section[i].start - lastY * .9)
+            // removing header
+            // if(lastY >= section[0].stop)
+            //   section[0].el.style.display = 'none'
+
+            // add class to current section
+            if (lastY >= section[i].start)
                 section[i].el.classList.add('actual')
 
             // to get menu fixed
@@ -85,33 +85,45 @@ function loop() {
             else
                 menu.classList.remove('fixed')
 
-            // to mark current section on menu
-            let a = menu.querySelectorAll('a')
-
-            for (let link of a) {
-                if(link.classList.contains(section[i].el.id))
-                  link.classList.add('on')
+            // marking menu
+            for (let anchor of anchors) {
+                if(anchor.classList.contains(section[i].el.id))
+                    anchor.classList.add('on')
                 else
-                  link.classList.remove('on')
+                    anchor.classList.remove('on')
             }
 
-
             // if is dark
-            if (section[i].dark || lastY >= section[count - 1].start)
-                menu.setAttribute("data-color", "light")
-            else
+            if (section[i].dark)
                 menu.setAttribute("data-color", "dark")
+            else
+                menu.setAttribute("data-color", "light")
 
         } else {
             section[i].el.classList.remove('actual')
         }
     }
+
+
+    document.body.onload = addSizer
+    //
+    setTop(wrapper, lastY);
     animation(loop)
+}
+
+
+
+function addSizer() {
+  let sizer = document.createElement("div");
+  sizer.style.height = doc.offsetHeight - wHeight + 'px'
+  body.appendChild(sizer)
+  wrapper.style.position = 'fixed'
 }
 
 // Let's go
 props()
 loop()
+
 
 
 // scroll to sections
@@ -132,7 +144,6 @@ var smooth_scroll_to = function(element, target, duration) {
     if (duration === 0) {
         element.scrollTop = target
         return Promise.resolve()
-        console.log('Promise.resolve()')
     }
 
     let
@@ -170,8 +181,6 @@ var smooth_scroll_to = function(element, target, duration) {
 
                 element.scrollTop = frameTop
 
-
-
                 // check if we're done!
                 if (now >= end_time) {
                     resolve()
@@ -197,10 +206,9 @@ var smooth_scroll_to = function(element, target, duration) {
     })
 }
 
-
 function Y(t) {
     let
-    // make it an string
+        // make it an string
         going = t.attributes.href.nodeValue.toString(),
         // get the coordinates
         box = doc.querySelector(going).getBoundingClientRect(),
@@ -219,9 +227,6 @@ function Y(t) {
         top: Math.round(top)
     }
 }
-
-
-let anchors = doc.querySelectorAll('#menu a')
 
 for (let anchor of anchors) {
 
