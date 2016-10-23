@@ -2,24 +2,25 @@
 
     <main role="home" id="wrap">
       <%- include menu %>
-      <section id="portfolio" class="section">
+      <div class="sections-home">
+        <section id="portfolio" class="section">
 
         <div class="thumbs">
           <div class="thumb portfolio-type-title">
               <span><small>ux</small> design</span>
           </div>
           <div class="thumb">
-            <a href="casa-decorativa">
+            <a href="casa-decorativa" title="Casa Decorativa">
               <img src="https://d13yacurqjgara.cloudfront.net/users/40433/screenshots/3009727/dr_1x.png">
             </a>
           </div>
           <div class="thumb">
-            <a href="babies-buh">
+            <a href="babies-buh" title="Babies Buh!">
               <img src="https://d13yacurqjgara.cloudfront.net/users/40433/screenshots/3009727/dr_1x.png">
             </a>
           </div>
           <div class="thumb">
-            <a href="#">
+            <a href="#" title="Teste">
               <img src="https://d13yacurqjgara.cloudfront.net/users/40433/screenshots/3009727/dr_1x.png">
             </a>
           </div>
@@ -27,17 +28,17 @@
 
         <div class="thumbs">
           <div class="thumb">
-            <a href="#">
+            <a href="#" title="Teste">
               <img src="https://d13yacurqjgara.cloudfront.net/users/40433/screenshots/3009727/dr_1x.png">
             </a>
           </div>
           <div class="thumb">
-            <a href="#">
+            <a href="#" title="Teste">
               <img src="https://d13yacurqjgara.cloudfront.net/users/40433/screenshots/3009727/dr_1x.png">
             </a>
           </div>
           <div class="thumb">
-            <a href="#">
+            <a href="#" title="Teste">
               <img src="https://d13yacurqjgara.cloudfront.net/users/40433/screenshots/3009727/dr_1x.png">
             </a>
           </div>
@@ -48,7 +49,7 @@
 
       </section>
 
-      <section id="sobre" class="section dark">
+        <section id="sobre" class="section dark">
 
         <div class="wrp">
           <article>
@@ -81,7 +82,7 @@
 
       </section>
 
-      <section id="contato" class="section ">
+        <section id="contato" class="section ">
         <div class="bars">
           <% for(var i = 0; i < 20; i++) {
             var x = Math.floor((Math.random() * 20) + 1);
@@ -115,6 +116,6 @@
         </form>
 
       </section>
-
+      </div>
   </main>
   <%- include footer %>

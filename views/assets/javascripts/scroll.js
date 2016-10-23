@@ -21,32 +21,17 @@ var lastY = -1
 
 // Pre calculate sizes to get better perfs
 function props() {
-
     lastY = -1 // Force a recalculation
     let wHeight = window.innerHeight
-
-    let i = 0
-    for (i = 0; i < count; i++) {
+    for (let i = 0; i < count; i++) {
         section[i] = section[i] || {  el: sections[i] }
-            // Reinit
-            // section[i].el.style.display = 'block'
         section[i].height = section[i].el.offsetHeight
         section[i].start = section[i - 1] ? section[i - 1].stop : 0
         section[i].stop = section[i - 1] ? section[i - 1].stop + section[i].height : section[i].height
-        section[i].isScroll = section[i].el.className.indexOf('stick') < 0
         section[i].dark = section[i].el.className.indexOf('dark') > 0
-
-
-        // If it's sticked but higher than the screen...
-        if (section[i].height - wHeight > 0) section[i].gap = section[i].height - wHeight
-
-        // Let's find a index
-        //section[i].el.style.zIndex = !section[i].isScroll ? 10 - i : 100 - i
     }
-
-    wrapper.style.height = section[i - 1].stop - section[0].height + "px"
-
 }
+
 window.onresize = props
 
 function setTop(m, t) {
@@ -71,16 +56,14 @@ function loop() {
         // if it is on screen
         if (lastY >= (section[i].start - 2) && lastY <= (section[i].stop + 2) ){
 
-            // removing header
-            // if(lastY >= section[0].stop)
-            //   section[0].el.style.display = 'none'
 
-            // add class to current section
-            if (lastY >= section[i].start)
-                section[i].el.classList.add('actual')
+            //setTop(section[i].el, lastY * .1 / 3);
+
+            section[i].el.classList.add('actual')
+
 
             // to get menu fixed
-            if (lastY >= section[1].start)
+            if (lastY >= section[0].stop)
                 menu.classList.add('fixed')
             else
                 menu.classList.remove('fixed')
@@ -102,23 +85,16 @@ function loop() {
         } else {
             section[i].el.classList.remove('actual')
         }
+
+
     }
 
-
-    document.body.onload = addSizer
-    //
-    setTop(wrapper, lastY);
     animation(loop)
 }
 
 
 
-function addSizer() {
-  let sizer = document.createElement("div");
-  sizer.style.height = doc.offsetHeight - wHeight + 'px'
-  body.appendChild(sizer)
-  wrapper.style.position = 'fixed'
-}
+
 
 // Let's go
 props()
