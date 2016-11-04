@@ -10,14 +10,14 @@ let cssTransform = (function() {
     return cssTransform
 })()
 
-let sections = doc.querySelectorAll('.section'),
-    wrapper = doc.querySelector('#wrap'),
-    menu = doc.querySelector('#menu'),
-    anchors = doc.querySelectorAll('#menu a'),
-    count = sections.length,
-    section = [],
-    wHeight = window.innerHeight
-var lastY = -1
+let sections  = doc.querySelectorAll('.section'),
+    wrapper   = doc.querySelector('#wrap'),
+    menu      = doc.querySelector('#menu'),
+    anchors   = doc.querySelectorAll('#menu a'),
+    count     = sections.length,
+    section   = [],
+    wHeight   = window.innerHeight,
+    lastY     = -1
 
 // Pre calculate sizes to get better perfs
 function props() {
@@ -58,15 +58,17 @@ function loop() {
 
 
             //setTop(section[i].el, lastY * .1 / 3);
-
             section[i].el.classList.add('actual')
 
-
             // to get menu fixed
-            if (lastY >= section[0].stop)
+            if (lastY >= section[0].stop){
                 menu.classList.add('fixed')
-            else
-                menu.classList.remove('fixed')
+                section[0].el.style.height = '0px'
+            }
+            else{
+              menu.classList.remove('fixed')
+            }
+
 
             // marking menu
             for (let anchor of anchors) {
